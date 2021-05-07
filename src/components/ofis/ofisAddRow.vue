@@ -4,13 +4,13 @@
             <div class="col">
                 <input type="text" class="form-control" aria-label="Medium" aria-describedby="inputGroup-sizing-sm">
             </div>
+            <div class="col">
+                <input type="text" class="form-control" aria-label="Medium" aria-describedby="inputGroup-sizing-sm">
+            </div>
              <div class="col">
                 <input type="text" class="form-control" aria-label="Medium" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="col">
-                <input type="text" class="form-control" aria-label="Medium" aria-describedby="inputGroup-sizing-sm">
-            </div>
-                        <div class="col">
                 <input type="text" class="form-control" aria-label="Medium" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class=" col align-self-medium">

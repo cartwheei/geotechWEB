@@ -7,13 +7,10 @@
                     <span>{{item.il_kodu}}</span>
                 </div>
                 <div class="col ">
-                    <span>{{item.personel_sayı}}</span>
+                    <span>{{item.numarataj}}</span>
                 </div>
                 <div class="col ">
-                    <span>{{item.hamveri}}</span>
-                </div>
-                <div class="col ">
-                    <span>{{item.supurme}}</span>
+                    <span>{{item.geometri}}</span>
                 </div>
                 <div class="col ">
                     <span>{{item.toplam_is}}</span>

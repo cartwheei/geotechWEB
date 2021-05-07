@@ -5,16 +5,13 @@
                    İl Kodu (Plaka)
                 </div>
                 <div class="col">
-                    Üretim Yapan Personel Sayısı
+                   Toplam Numarataj Sayısı
                 </div>
                 <div class="col">
-                  Hamveri Sayısı
+                  Toplam Geometri Sayısı
                 </div>
                 <div class="col">
-                    Süpürme Sayısı
-                </div>
-                <div class="col">
-                    Toplam İş yükü
+                    Toplam Ofis İş Yükü
                 </div>
                 <div class="col">
                     İşlem

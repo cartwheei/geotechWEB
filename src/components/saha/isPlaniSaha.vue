@@ -1,7 +1,7 @@
 <template>
     <div id="container">
     <div class="row">
-     <h3 class="mt-5">Tablo Bilgisi</h3>
+     <h3 class="mt-5">Saha İş Planı Tablosu </h3>
     <div class="col">
     <div class="row">
     <is-plani-tablo-bilgisi/>
@@ -26,7 +26,7 @@
 <script>
 
 import isPlaniSahaVerileri from './isPlaniSahaVerileri'
-import addRow from '../addRow'
+import addRow from './sahaAddRow'
 import axios from 'axios'
 import isPlaniTabloBilgisi from './isPlaniTabloBilgisi'
 export default {
@@ -51,7 +51,7 @@ export default {
         alert('post kısmı')
       },
       veriGetir(){
-            axios.get("http://localhost:2021/eczane").then(response=>{
+            axios.get("http://localhost:2022/saha").then(response=>{
           for (let key in response.data.result.features){
             this.todoList.push(response.data.result.features[key].properties)
             console.log(this.todoList)
