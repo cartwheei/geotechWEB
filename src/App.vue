@@ -1,16 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div class="alper">
+<is-plani-saha-son/>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import isPlaniSahaSon from './components/saha/isPlaniSahaSon'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+   name: 'App',
+   components: {
+  'is-plani-saha-son':isPlaniSahaSon
+      }
 }
 </script>
 
