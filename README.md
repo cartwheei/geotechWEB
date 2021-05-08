@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### durum
+iş planı tablosundaki silme tuşu databaseden obje siliyor ama html tablosundan eksilmiyor.
+///
+saha tablosuna veri eklendiğinde databaseye de ekliyor.

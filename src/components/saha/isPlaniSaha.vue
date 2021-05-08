@@ -11,7 +11,7 @@
     </div>
     </div>
     <div class="row">
-    <add-row v-for="item in count" :key="item.id"/>
+    <add-row v-for="item in count" :key="item.id" v-on:addValue="updateTodoList($event)"/>
     </div>
     <div class="row">
     <button v-on:click="veriGetir()" class="btn btn-danger">veri getir</button> 
@@ -64,8 +64,10 @@ export default {
         this.comps.push({id:this.count})
         this.count++
       },
-      
 
+      updateTodoList(obj){
+        this.todoList.push(obj)
+      }
     }
 }
 </script>

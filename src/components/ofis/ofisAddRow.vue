@@ -18,7 +18,7 @@
                  aria-describedby="inputGroup-sizing-sm" v-model="toplamIs">
             </div>
             <div class=" col align-self-medium">
-              <button v-on:click="addIs()" class="btn btn-success">Ekle</button>
+              <button v-on:click="addOfis()" class="btn btn-success">Ekle</button>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@ export default {
         }
     },
     methods:{
-        addIs(){
+        addOfis(){
             const header={
                 'Content-Type': 'application/json;charset=UTF-8',
             }
