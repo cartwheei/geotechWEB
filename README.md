@@ -25,5 +25,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### durum
 iş planı tablosundaki silme tuşu databaseden obje siliyor ama html tablosundan eksilmiyor.
-///
+### durum2
 saha tablosuna veri eklendiğinde databaseye de ekliyor.
