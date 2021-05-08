@@ -63,7 +63,8 @@ export default {
       inputEkle(){
         this.comps.push({id:this.count})
         this.count++
-      }
+      },
+      
 
     }
 }

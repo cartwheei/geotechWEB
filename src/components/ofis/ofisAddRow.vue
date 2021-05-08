@@ -28,6 +28,8 @@
 import axios from 'axios'
 
 export default {
+    props: ['todoList'],
+
     data(){
         return{
             il_kod:"",
@@ -52,11 +54,12 @@ export default {
             axios.post("http://localhost:2022/ofispost", obj,{
                 headers:header}) 
                 .then((response)=>{
+                this.$emit('addValue', obj)
                 console.log(response)
             }).catch(error => {
                     if(error.response){
                         console.log(error.response)
-                        alert('verileri kontrol ediniz')
+                        alert(error.response.data.results.aciklama)
                     }
             })
         }
