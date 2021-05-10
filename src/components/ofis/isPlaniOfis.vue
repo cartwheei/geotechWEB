@@ -7,11 +7,11 @@
     <is-plani-tablo-bilgisi/>
     </div>
     <div class="row is-plani-saha">
-    <is-plani-ofis-verileri v-for="item in todoList"  :key="item.id"  :item="item"/>
+    <is-plani-ofis-verileri v-for="item in todoList"  :key="item.id"  :item="item" v-on:rmValue="updateTodoList(undefined,$event)"/>
     </div>
     </div>
     <div class="row">
-    <add-row v-for="item in count" :key="item.id" v-on:addValue="updateTodoList($event)"/>
+    <add-row v-for="item in count" :key="item.id" v-on:addValue="updateTodoList($event,undefined)"/>
     </div>
     <div class="row">
     <button v-on:click="veriGetir()" class="btn btn-danger">veri getir</button> 
@@ -64,10 +64,18 @@ export default {
         this.comps.push({id:this.count})
         this.count++
       },
-      updateTodoList(obj){
-        this.todoList.push(obj)
-      }
 
+      updateTodoList(obj1,obj2){
+        if(obj1){
+        this.todoList.push(obj1)
+        }
+        if(obj2){
+          let index = this.todoList.findIndex(i=>{
+            return i.il_kodu == obj2.il_kodu
+          })
+          this.todoList.splice(index,1)
+        }
+      }
     }
 }
 </script>

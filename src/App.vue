@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import helloWorld from './components/HelloWorld'
 import isPlaniSaha from './components/saha/isPlaniSaha'
 import isPlaniOfis from './components/ofis/isPlaniOfis'
 export default {
@@ -17,7 +16,6 @@ export default {
    components: {
   'is-plani-saha':isPlaniSaha,
   'is-plani-ofis':isPlaniOfis,
-  'hello':helloWorld
       },
       data(){
         return{

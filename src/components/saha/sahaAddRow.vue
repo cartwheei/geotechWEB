@@ -55,7 +55,7 @@ export default {
             "supurme":this.supurme,
             "toplam_is":this.toplam
         }
-        console.log(obj)
+        
         axios.post("http://localhost:2022/sahapost", obj,{
                 headers:header}) 
                 .then((response)=>{
@@ -63,8 +63,8 @@ export default {
                 console.log(response)
             }).catch(error => {
                     if(error.response){
-                        console.log(error.response)
-                        // alert(error.response.data.results)
+                        // console.log(error.response)
+                        alert(error.response.data.results)
                 }
             })
 

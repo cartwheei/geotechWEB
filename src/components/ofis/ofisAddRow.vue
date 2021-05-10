@@ -54,8 +54,9 @@ export default {
             axios.post("http://localhost:2022/ofispost", obj,{
                 headers:header}) 
                 .then((response)=>{
-                this.$emit('addValue', obj)
                 console.log(response)
+                this.$emit('addValue', obj)
+                
             }).catch(error => {
                     if(error.response){
                         console.log(error.response)

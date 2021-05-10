@@ -31,6 +31,11 @@ import axios from 'axios'
 
 export default {
         props : ["item"],
+        data(){
+            return{
+
+            }
+        },
         methods:{
             removeItem(){
 
@@ -38,10 +43,13 @@ export default {
                 'Content-Type': 'application/json;charset=UTF-8'}
                 
                 var obj = {"il_kodu":this.item.il_kodu}
+
+
                 console.log(obj)
                 axios.post("http://localhost:2022/ofisdel", obj
                 ,{'headers':header})
                 .then((response)=>{
+                this.$emit('rmValue',obj)
                 console.log(response)})
                 .catch(error => {
                     if(error.response){
