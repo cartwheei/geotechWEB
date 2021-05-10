@@ -1,9 +1,13 @@
 <template>
 <div class="alper">
+    <div class="degisken">
+        
+        <button class="btn btn-dark" v-on:click="comp='is-plani-ofis'">Ofis Tablosu</button>
+        <button class="btn btn-dark" v-on:click="comp='is-plani-saha'">Saha Tablosu</button>
+    </div>
 
   <component v-bind:is="comp"></component>
-  <button class="btn btn-dark" v-on:click="comp='is-plani-ofis'">Ofis Tablosu</button>
-  <button class="btn btn-dark" v-on:click="comp='is-plani-saha'">Saha Tablosu</button>
+
   </div>
 
 </template>
@@ -16,7 +20,6 @@ export default {
    components: {
   'is-plani-saha':isPlaniSaha,
   'is-plani-ofis':isPlaniOfis,
-  'map-box-map':map
       },
       data(){
         return{

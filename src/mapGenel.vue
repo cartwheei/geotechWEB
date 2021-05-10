@@ -1,5 +1,8 @@
 <template>
-  <div id="map"/>
+  <div class="harita">
+    <div id="map"/>
+  </div>
+  
 </template>
 
 <script>
@@ -27,7 +30,6 @@ export default {
 </script>
 
 <style>
-#map {
-  height: 100vh;
-}
+#map { position: absolute; top: 100px; bottom: 0; width: 100%; }
+
 </style>
