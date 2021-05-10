@@ -1,20 +1,18 @@
 <template>
 <div class="alper">
-  <div class="1">
+
   <component v-bind:is="comp"></component>
   <button class="btn btn-dark" v-on:click="comp='is-plani-ofis'">Ofis Tablosu</button>
   <button class="btn btn-dark" v-on:click="comp='is-plani-saha'">Saha Tablosu</button>
   </div>
-  <map-box-map/>
-</div>
+
 </template>
 
 <script>
 import isPlaniSaha from './components/saha/isPlaniSaha'
 import isPlaniOfis from './components/ofis/isPlaniOfis'
-import map from './mapGenel'
+
 export default {
-   name: 'App',
    components: {
   'is-plani-saha':isPlaniSaha,
   'is-plani-ofis':isPlaniOfis,
