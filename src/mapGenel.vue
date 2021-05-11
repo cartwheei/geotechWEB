@@ -10,7 +10,6 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 // import { onMounted } from "vue";
 import axios from 'axios'
-
 export default {
   data(){
     return{
@@ -18,7 +17,6 @@ export default {
       params:{"il_kodlari":[26,7,9,16,33,48,54,60,10]}
     }
   },
-
     mounted(){
       mapboxgl.accessToken =
         "pk.eyJ1IjoiY2FydHdoZWVsIiwiYSI6ImNranp4em5rczBjN2Qyb2syOHR2eWhhcGkifQ.JVVl04Dnmq0xIKJiER_C8A   ";
@@ -29,13 +27,35 @@ export default {
         center:[33.441933,39.487294]
       });
       
-
       map.on('load', () => {
-        map.addSource('iller2',{
-          'type':'geojson',
-          'data':this.iller
-        })
+        // map.addSource('iller2',{
+        //   'type':'geojson',
+        //   'data':this.iller
+        // })
+        // map.addLayer({
+        //   'id': 'maine',
+        //   'type': 'fill',
+        //   'source': 'iller2', // reference the data source
+        //   'layout': {},
+        //   'paint': {
+        //   'fill-color': '#0080ff', // blue color fill
+        //   'fill-opacity': 0.5
+        //   }
+        //   });
+      // TODO: Here we want to load a layer
+      // TODO: Here we want to load/setup the popup
 
+        this.getGeojson(map,this.add_il_layer)
+
+      });
+    },
+    
+  methods:{
+      add_il_layer(map,il_geo){
+          map.addSource('iller2',{
+          'type':'geojson',
+          'data':il_geo
+        })
         map.addLayer({
           'id': 'maine',
           'type': 'fill',
@@ -46,39 +66,34 @@ export default {
           'fill-opacity': 0.5
           }
           });
+      },
 
-
-      // TODO: Here we want to load a layer
-      // TODO: Here we want to load/setup the popup
-      });
-    },
-    
-  methods:{
-
-      deneme(){
-        
-      }
-
-  },
-
-  created(){
-    
+      getGeojson(map, callback){
         axios.post("http://localhost:2022/geo",this.params).then(response=>{
-        
+        callback(map,response.data.result)
         // var iller = response.data.result.features
-        this.iller = response.data.result
-        console.log(this.iller)
+        // this.iller = response.data.result
+        // console.log(this.iller)
         }).catch(e=>{
           console.log(e)
-        })         
+        })  
+      }
+  },
+  created(){
+    
+        // axios.post("http://localhost:2022/geo",this.params).then(response=>{
+        
+        // var iller = response.data.result.features
+        // this.iller = response.data.result
+        // console.log(this.iller)
+        // }).catch(e=>{
+        //   console.log(e)
+        // })         
   }
-
   
-
 };
 </script>
 
 <style>
 #map { position: absolute; top: 100px; bottom: 0; width: 100%; }
-
 </style>
