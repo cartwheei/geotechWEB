@@ -53,7 +53,14 @@ export default {
       });
     },
     
-  
+  methods:{
+
+      deneme(){
+        
+      }
+
+  },
+
   created(){
     
         axios.post("http://localhost:2022/geo",this.params).then(response=>{
