@@ -1,31 +1,31 @@
 <template>
-    <div class="addRow">
-        <div class="row">
-            <div class="col">
+    <tr>
+        
+            <td class="col">
                 <input id="il_kod" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="il_kod">
-            </div>
-            <div class="col">
+            </td>
+            <td class="col">
                 <input id="personel" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="personel">
-            </div>
-             <div class="col">
+            </td>
+             <td class="col">
                 <input id="hamveri" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="hamveri">
-            </div>
-            <div class="col">
+            </td>
+            <td class="col">
                 <input id="supurme" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="supurme">
-            </div>
-            <div class="col">
+            </td>
+            <td class="col">
                 <input id="toplam" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="toplam">
-            </div>
-            <div class=" col align-self-medium">
+            </td>
+            <td class=" col align-self-medium">
               <button v-on:click="addSaha()" class="btn btn-success">Ekle</button>
-            </div>
-        </div>
-    </div>
+            </td>
+        
+    </tr>
 </template>
 
 <script>

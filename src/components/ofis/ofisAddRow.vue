@@ -1,28 +1,29 @@
 <template>
-    <div class="addRow">
-        <div class="row">
-            <div class="col">
+    <tr>
+        
+            <td class="col">
                 <input id="il_kod" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="il_kod">
-            </div>
-            <div class="col">
+            </td>
+            <td class="col">
                 <input id="numarataj" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="numarataj">
-            </div>
-             <div class="col">
+            </td>
+             <td class="col">
                 <input id="geometri" type="text" class="form-control" aria-label="Medium" 
                 aria-describedby="inputGroup-sizing-sm" v-model="geometri">
-            </div>
-            <div class="col">
+            </td>
+            <td class="col">
                 <input id="toplamIs" type="text" class="form-control" aria-label="Medium"
                  aria-describedby="inputGroup-sizing-sm" v-model="toplamIs">
-            </div>
-            <div class=" col align-self-medium">
+            </td>
+            <td class=" col align-self-medium">
               <button v-on:click="addOfis()" class="btn btn-success">Ekle</button>
-            </div>
-        </div>
-    </div>
+            </td>
+       
+    </tr>
 </template>
+
 
 <script>
 import axios from 'axios'

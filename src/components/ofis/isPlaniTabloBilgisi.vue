@@ -1,27 +1,13 @@
 <template>
-    <div class="col">
-            <div class="row">
-                <div class="col">
-                   İl Kodu (Plaka)
-                </div>
-                <div class="col">
-                   Toplam Numarataj Sayısı
-                </div>
-                <div class="col">
-                  Toplam Geometri Sayısı
-                </div>
-                <div class="col">
-                    Toplam Ofis İş Yükü
-                </div>
-                <div class="col">
-                    İşlem
-                </div>
-        </div>
-    </div>
+  <tr class="table--header_row">
+    <th class="table--header">İl Kodu (Plaka)</th>
+    <th class="table--header">Toplam Numarataj Sayısı</th>
+    <th class="table--header">Toplam Geometri Sayısı</th>
+    <th class="table--header">Toplam Ofis İş Yükü</th>
+    <th class="table--header">İşlem</th>
+  </tr>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>

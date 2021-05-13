@@ -28,20 +28,7 @@ export default {
       });
       
       map.on('load', () => {
-        // map.addSource('iller2',{
-        //   'type':'geojson',
-        //   'data':this.iller
-        // })
-        // map.addLayer({
-        //   'id': 'maine',
-        //   'type': 'fill',
-        //   'source': 'iller2', // reference the data source
-        //   'layout': {},
-        //   'paint': {
-        //   'fill-color': '#0080ff', // blue color fill
-        //   'fill-opacity': 0.5
-        //   }
-        //   });
+
       // TODO: Here we want to load a layer
       // TODO: Here we want to load/setup the popup
 
@@ -70,25 +57,16 @@ export default {
 
       getGeojson(map, callback){
         axios.post("http://localhost:2022/geo",this.params).then(response=>{
+          console.log(response.data.result)
         callback(map,response.data.result)
-        // var iller = response.data.result.features
-        // this.iller = response.data.result
-        // console.log(this.iller)
+
         }).catch(e=>{
           console.log(e)
         })  
       }
   },
   created(){
-    
-        // axios.post("http://localhost:2022/geo",this.params).then(response=>{
-        
-        // var iller = response.data.result.features
-        // this.iller = response.data.result
-        // console.log(this.iller)
-        // }).catch(e=>{
-        //   console.log(e)
-        // })         
+         
   }
   
 };

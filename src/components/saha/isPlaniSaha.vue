@@ -1,24 +1,24 @@
 <template>
-    <div id="container">
-    <div class="row">
+    <div class="container">
+    
      <h3 class="mt-5">Saha İş Planı Tablosu </h3>
-    <div class="col">
-    <div class="row">
+     
+    <div class="data--table__container">
     <is-plani-tablo-bilgisi/>
-    </div>
-    <div class="row is-plani-saha">
+   
+    
     <is-plani-saha-verileri v-for="item in todoList"  :key="item.id"  
           :item="item" v-on:rmValueSaha="updateTodoList(undefined,$event)"/>
-    </div>
-    </div>
-    <div class="row">
+   
+    
     <add-row v-for="item in count" :key="item.id" v-on:addValue="updateTodoList($event,undefined)"/>
     </div>
+
     <div class="row">
-    <button v-on:click="veriGetir()" class="btn btn-danger">veri getir</button> 
-    <button v-on:click="inputEkle()" class="btn-secondary">Veri Ekle</button>
+    <button v-on:click="veriGetir()" class="table_button btn btn-danger">veri getir</button> 
+    <button v-on:click="inputEkle()" id="input_ekle_saha" class="table_button btn-secondary">Veri Ekle</button>
     </div>
-  </div>
+
 </div>
 
 
@@ -64,6 +64,7 @@ export default {
       inputEkle(){
         this.comps.push({id:this.count})
         this.count++
+        document.getElementById('input_ekle_saha').style.visibility = 'hidden'
       },
 
       updateTodoList(obj1,obj2){

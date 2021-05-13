@@ -1,30 +1,14 @@
 <template>
-    <div class="col">
-            <div class="row">
-                <div class="col">
-                   İl Kodu (Plaka)
-                </div>
-                <div class="col">
-                    Üretim Yapan Personel Sayısı
-                </div>
-                <div class="col">
-                  Hamveri Sayısı
-                </div>
-                <div class="col">
-                    Süpürme Sayısı
-                </div>
-                <div class="col">
-                    Toplam İş yükü
-                </div>
-                <div class="col">
-                    İşlem
-                </div>
-        </div>
-    </div>
+<tr class="table--header_row">
+  <th class="table--header">İl Kodu (Plaka)</th>
+  <th class="table--header">Üretim Yapan Personel Sayısı</th>
+  <th class="table--header">Hamveri Sayısı</th>
+  <th class="table--header">Süpürme Sayısı</th>
+  <th class="table--header">Toplam İş yükü</th>
+  <th class="table--header">İşlem</th>
+</tr>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>

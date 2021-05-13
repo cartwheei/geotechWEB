@@ -1,0 +1,35 @@
+/* data tables */
+.table--header_row{
+    padding: 2px;
+}
+
+.table--header,
+.table--data{
+    border: 0.5px solid #343536;
+    padding: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 1%;
+}
+
+.container{
+    border-collapse: collapse;
+    width: auto;
+    margin: 0 3vw;
+    table-layout: auto;
+    position: relative;
+}
+
+.table_button{
+    margin: 2vh 1vw 0 1vw;
+}
+
+.data--table__container{
+    margin: 0 2vw 0 0;
+}
+
+/* button */
+
+.btn-dark{
+    margin: 1px;
+}
