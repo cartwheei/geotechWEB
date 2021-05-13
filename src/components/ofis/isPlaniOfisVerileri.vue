@@ -18,6 +18,7 @@
         <!-- <button class="btn btn-primary">Güncelle</button> -->
       </td>
     </tr>
+    
  
 </template>
 

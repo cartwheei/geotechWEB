@@ -39,24 +39,53 @@ export default {
     
   methods:{
       add_il_layer(map,il_geo){
-          map.addSource('iller2',{
+          map.addSource('iller',{
           'type':'geojson',
           'data':il_geo
         })
         map.addLayer({
           'id': 'maine',
           'type': 'fill',
-          'source': 'iller2', // reference the data source
+          'source': 'iller', // reference the data source
           'layout': {},
           'paint': {
-          'fill-color': '#0080ff', // blue color fill
-          'fill-opacity': 0.5
+          'fill-color': '#3FAAC0', // blue color fill
+          'fill-opacity': 0.5,
           }
           });
+
+          map.addLayer(
+        {
+        'id': 'ilceler_line',
+        "type": "line",
+         "metadata": {},
+         "source": "iller",
+         'paint': {
+        "line-color": "#AAC03F",
+        "line-width": 2
+      }
+        });
+
+      map.addLayer({
+            'id': 'il-labels',
+            'type': 'symbol',
+            'source': 'iller',
+            'layout': {
+                'text-field': ['get', 'adm1_tr'],
+                'text-variable-anchor': [ 'center'],
+                'text-radial-offset': 0.5,
+            },
+            'paint':{
+              'text-color':'#C03FAA'
+            }
+            
+        });
+
+
       },
 
       getGeojson(map, callback){
-        axios.post("http://localhost:2022/geo",this.params).then(response=>{
+        axios.post("http://192.168.1.104:2022/geo",this.params).then(response=>{
           console.log(response.data.result)
         callback(map,response.data.result)
 

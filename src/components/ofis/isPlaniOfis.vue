@@ -7,16 +7,13 @@
     
    
     <is-plani-ofis-verileri v-for="item in todoList"  :key="item.id"  :item="item" v-on:rmValue="updateTodoList(undefined,$event)"/>
-    
-    
-
-    
+  
     <add-row v-for="item in count" :key="item.id" v-on:addValue="updateTodoList($event,undefined)"/>
     </div>
 
-    <div class="row">
-    <button v-on:click="veriGetir()" class="table_button btn btn-danger">veri getir</button> 
-    <button v-on:click="inputEkle()" id="input_ekle_ofis" class="table_button btn-secondary">Veri Ekle</button>
+    <div class="btn-row row">
+    <button v-on:click="veriGetir()" class="table_button btn btn-danger">Tablo Güncelle</button> 
+    <button v-on:click="inputEkle()" id="input_ekle_ofis" class="btn btn-secondary table_button">Veri Ekle</button>
     </div>
   
 </div>
@@ -53,7 +50,9 @@ export default {
       },
       veriGetir(){
             axios.get("http://localhost:2022/ofis").then(response=>{
+              this.todoList = []
           for (let key in response.data.result.features){
+            
             this.todoList.push(response.data.result.features[key].properties)
             console.log(this.todoList)
           }
@@ -78,6 +77,16 @@ export default {
           this.todoList.splice(index,1)
         }
       }
+    },
+    created(){
+                  axios.get("http://localhost:2022/ofis").then(response=>{
+          for (let key in response.data.result.features){
+            this.todoList.push(response.data.result.features[key].properties)
+            console.log(this.todoList)
+          }
+        }).catch(e=>{
+          console.log(e)
+        })
     }
 }
 </script>

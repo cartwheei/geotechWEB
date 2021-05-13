@@ -63,7 +63,7 @@ export default {
                         console.log(error.response)
                         alert(error.response.data.results.aciklama)
                     }
-            })
+            });
         }
     }
     

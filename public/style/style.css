@@ -14,22 +14,36 @@
 
 .container{
     border-collapse: collapse;
-    width: auto;
+    width: max-content;
     margin: 0 3vw;
     table-layout: auto;
     position: relative;
 }
 
 .table_button{
-    margin: 2vh 1vw 0 1vw;
+    margin: 2vh 1vw 0 0;
 }
 
-.data--table__container{
-    margin: 0 2vw 0 0;
-}
 
 /* button */
 
 .btn-dark{
     margin: 1px;
+}
+
+
+.btn-row{
+    display: contents;
+}
+
+
+#app{
+    
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+      
 }

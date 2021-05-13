@@ -14,9 +14,9 @@
     <add-row v-for="item in count" :key="item.id" v-on:addValue="updateTodoList($event,undefined)"/>
     </div>
 
-    <div class="row">
-    <button v-on:click="veriGetir()" class="table_button btn btn-danger">veri getir</button> 
-    <button v-on:click="inputEkle()" id="input_ekle_saha" class="table_button btn-secondary">Veri Ekle</button>
+    <div class="btn-row row">
+    <button v-on:click="veriGetir()" class="table_button btn btn-danger">Tablo Güncelle</button> 
+    <button v-on:click="inputEkle()" id="input_ekle_saha" class="table_button btn btn-secondary">Veri Ekle</button>
     </div>
 
 </div>
@@ -53,6 +53,7 @@ export default {
       },
       veriGetir(){
             axios.get("http://localhost:2022/saha").then(response=>{
+              this.todoList = []
           for (let key in response.data.result.features){
             this.todoList.push(response.data.result.features[key].properties)
             console.log(this.todoList)
@@ -79,6 +80,16 @@ export default {
         }
       }
 
+    },
+    created(){
+                  axios.get("http://localhost:2022/saha").then(response=>{
+          for (let key in response.data.result.features){
+            this.todoList.push(response.data.result.features[key].properties)
+            console.log(this.todoList)
+          }
+        }).catch(e=>{
+          console.log(e)
+        })
     }
 }
 </script>
